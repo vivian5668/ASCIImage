@@ -1,18 +1,27 @@
-<div class="container">
-	<div class="row">
-		<div id="intro" class="col">
-			<div id="introText">
-				<h1>Find Physical Address of an IP</h1>
+<div id="loginBlock" class="row valign-wrapper">
+	<div id="intro" class="col s8">
+		<div class="container">
+			<div class="responsive-img">
+				<img src="/img/powerBtn.png" alt="Power Button Img">
 			</div>
+			<div id="introText valign-wrapper">
+				<h5 class="center-align">Find Physical Address of an IP</h5>
+			</div>
+			
 			<div id="shareButton" class="row">
-				<div class="col"><a href="#"> <i class="large material-icons">insert_chart</i></a></div>
-				<div class="col"><i class="large material-icons">insert_chart</i></div>
-				<div class="col"><i class="large material-icons">insert_chart</i></div>
-				<div class="col"><i class="large material-icons">insert_chart</i></div>
+				  <a href="https://github.com/vivian5668/Tinkling" class="shareButtons btn-floating black center-align"><i class="fab fa-github"></i></a>
+				  
+			      <a class="btn-floating black center-align shareButtons"><i class="fab fa-facebook-square"></i></a>
+			      
+			      <a class="btn-floating black center-align shareButtons"><i class="fab fa-twitter-square"></i></a>
+			      
+			      <a class="btn-floating black center-align shareButtons"><i class="fab fa-google-plus-square"></i></a>
+			      
 			</div>
 		</div>
-		<div id="loginForm" class="col">
-			<form action="/auth/login" method="POST">
+	</div>
+		<div id="loginForm" class="col s4 valign-wrapper #fff9c4 yellow lighten-4">
+			<form class="center-align" action="/auth/login" method="POST">
 			  <div>
 			    <label for="authEmail">Email</label>
 			    <input id="authEmail" class="form-control" type="email" name="email">
@@ -26,5 +35,4 @@
 			  <input class="btn" type="submit">
 			</form>
 		</div>
-	</div>
-</div>	
+</div>

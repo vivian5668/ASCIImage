@@ -6,12 +6,16 @@ var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('./config/ppConfig');
+var path = require('path');
 
 var isLoggedIn = require('./middleware/isLoggedIn');
 
 var app = express();
 
 app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public'))); //now ejs knows to find js, css, html in the static folder
+
 
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
