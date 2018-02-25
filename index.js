@@ -43,11 +43,16 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
+app.get('/gallery', function(req, res) {
+  res.render('gallery');
+});
+
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/ImageResult', require('./controllers/ImageResult'));
 
 var server = app.listen(process.env.PORT || 3000);
 

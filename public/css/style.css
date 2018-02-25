@@ -1,35 +1,19 @@
-html, body {
-	margin: none;
-	padding: none;
-	height: 100vh;
-}
-
-#loginBlock: {
-	height: 100%;
-}
-
-#introText, #loginForm {
-	height: 100vh;
-}
-
-#intro {
-	color: white;
-	background-image: url("../img/darkBg.jpg");
-	height: 100vh;
-	width: 100vw;
-}
 body {
-	background-color: black;
 	text-align: center;
+	color: white;
+	background-color: black
 }
 
-#loginForm {
-	background-color: lightblue;
+#imageResult {
+	/*width: 50%;*/
+/*	height: 50vh;*/
 }
 
-#shareButton {
-	text-align: center;
-
-
+.slider {
+	width: 600px;
+	margin: 0 auto;
 }
 
+#homePageButtons {
+	padding: 40px;
+}
