@@ -6,7 +6,7 @@ var request = require('request');
 
 
 router.get('/', function(req, res) {
-	var imgUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_AeqLZHbJOq-LmZ3UkJDRLv77Fo2RV-XKWiHM2xZ4MjJwx87ZzQ'
+	var imgUrl = 'https://farm8.static.flickr.com/7367/13891786227_b876e184cd_b.jpg'
 	request({
 		url: 'https://process.filestackapi.com/' + 
 		process.env.FIRE_STACK_KEY + '/ascii=background:black,colored:true,size:40/' + imgUrl

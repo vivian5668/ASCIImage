@@ -25,68 +25,43 @@ body {
 	text-align: center;
 }
 
-
-/*--for Gallery Page--*/
-@font-face{font-family:'Calluna';
- src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
-}
-
-#galleryPage {
-	column-width: 320px;
-	column-gap: 15px;
-    width: 90%;
+#wrapper {
+	width: 90%;
 	max-width: 1100px;
+	min-width: 490px;
 	margin: 50px auto;
 }
 
-div#galleryPage figure {
-	background: #fefefe;
-	border: 2px solid #fcfcfc;
-	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+#columns {
+	column-count: 4;
+	column-gap: 10px;
+	column-fill: auto;
+}
+
+.grid {
+	display: inline-block;
 	margin: 0 2px 15px;
+	columns-break-inside: avoid;
 	padding: 15px;
-	padding-bottom: 10px;
-	transition: opacity .4s ease-in-out;
-  	display: inline-block;
-  	column-break-inside: avoid;
+	transition: all 1s ease;
 }
 
-div#galleryPage figure img {
-	width: 100%; height: auto;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
+@media (max-width: 500px) {
+	#columns {
+	column-count: 1;
+	}
 }
 
-div#galleryPage figure figcaption {
-  		font-size: .9rem;
-	color: #444;
-  	line-height: 1.5;
+@media (min-width: 500px){
+	#columns {
+	column-count: 2;
+	}
 }
 
-div#galleryPage small { 
-  font-size: 1rem;
-  float: right; 
-  text-transform: uppercase;
-  color: #aaa;
-} 
-
-div#galleryPage small a { 
-  color: #666; 
-  text-decoration: none; 
-  transition: .4s color;
+@media (min-width: 900px) {
+	#columns {
+	column-count: 3;
+	}
 }
-
-div#galleryPage:hover figure:not(:hover) {
-	opacity: 0.4;
-}
-
-@media screen and (max-width: 750px) { 
-  #galleryPage { column-gap: 0px; }
-  #galleryPage figure { width: 100%; }
-}
-
-/*--End for Gallery Page--*/
-
 
 
