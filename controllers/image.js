@@ -48,6 +48,14 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 			});
 		});
 		res.redirect('/image/new');
+	}).then(function(data) {
+		db.project.create({
+			user_id: req.user.id, //to get the userId who signed in currently
+			project_name: req.body.project_name,
+			description: req.body.description,
+			cloudinary_url: data.url,
+			ascii_url: '#'
+		})
 	})
 })
 

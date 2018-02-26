@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   user.associate = function(models) { //WDI notes doesn't apply, we use sequelize 4.
-    // associations can be defined here
+    models.user.hasMany(models.project);
   };
 
   //attaching method to a class, so it is inheritable, like array on MDN docs
