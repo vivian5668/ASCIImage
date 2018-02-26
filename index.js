@@ -7,8 +7,15 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('./config/ppConfig');
 var path = require('path');
+var fs = require('fs');
 
 var isLoggedIn = require('./middleware/isLoggedIn');
+
+var multer = require('multer');
+var upload = multer({ dest: './uploads/'});
+var path = require('path');
+
+var cloudinary = require('cloudinary');
 
 var app = express();
 
@@ -52,7 +59,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/ImageResult', require('./controllers/ImageResult'));
+app.use('/image', require('./controllers/image'));
 
 var server = app.listen(process.env.PORT || 3000);
 
