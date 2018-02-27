@@ -20,7 +20,7 @@ module.exports = {
       ascii_url: {
         type: Sequelize.TEXT
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

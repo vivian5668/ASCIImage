@@ -31,7 +31,7 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 		cloudinary_url = result.url;
 
 		db.project.create({
-			user_id: req.user.id, //to get the userId who signed in currently
+			userId: req.user.id, //to get the userId who signed in currently
 			project_name: req.body.project_name,
 			description: req.body.description,
 			cloudinary_url: cloudinary_url,
@@ -61,11 +61,11 @@ router.get('/:id', function(req, res) {
 				+ '/ascii=background:black,colored:true,size:40/' 
 				+ imgUrl
 			}, function(error, response, body) {
-				console.log(error, body);
+				// console.log(error, body);
 				 if (!error && response.statusCode === 200) {
 				 	var dataObj = body;
-				 	console.log(body);
-				 	res.render('image/imageResult', {imageResult: dataObj}) //.Search b/c dataObj structure data in search property
+				 	// console.log(body);
+				 	res.render('image/imageResult', {imageResult: dataObj, imgUrl: imgUrl}) //.Search b/c dataObj structure data in search property
 				 }
 			  })
 	})
