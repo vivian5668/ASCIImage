@@ -1,0 +1,9 @@
+<h2>Projects Index - show all</h2>
+
+<ul>
+	<% projects.forEach(function (project) { %>
+		<li>
+		<a href="/projects/" + project.id + "/"<%= project.project_name %></a>
+		</li>
+})
+</ul>

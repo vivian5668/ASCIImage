@@ -1,0 +1,10 @@
+<h2>Edit Project Information</h2>
+<h3> You are editting: <%= project.project_name %></h3>
+
+<form action="/projects/<%=project.id%>" id="edit-tag">
+	<div class="form-group">
+		<label for="">Name: </label>
+		<input type="text" id="name" name="name" value="<%= project.name%>">
+		<input type="submit" value="Change It" class="btn btn-success">
+	</div>
+</form>
