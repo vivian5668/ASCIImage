@@ -1,9 +1,13 @@
 <h2>Projects Index - show all</h2>
 
 <ul>
-	<% projects.forEach(function (project) { %>
-		<li>
-		<a href="/projects/" + project.id + "/"<%= project.project_name %></a>
-		</li>
-})
+	<% projects.forEach(function(project) { %>
+		<li><h2><%= project.project_name  %></h2>  - <a class="delete-link" href="/articles/<%= project.id %>/destroy">Delete</a></li>
+
+		<div> <img src="<%= project.cloudinary_url %>" alt=""></div>
+
+		<div id="imageResult">
+			<%- project.ascii_url %>
+		</div>
+   <% }); %>
 </ul>

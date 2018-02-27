@@ -19,10 +19,16 @@ var cloudinary_url;
 
 //**** need more work this section below
 router.get('/', function(req, res) {
-	db.project.findAll().then(function(projects) {
-			res.render('/projects/index', {projects: data});
-	});
-})
+		db.project.findAll({
+			where: {
+				userId: req.user.id //id of current logged-in user
+			}
+		}).then(function(projects) {
+			res.render('projects/index', {projects : projects})
+		});
+});
+
+
 
 //get the form for new project
 router.get('/new', function(req, res) {
@@ -44,44 +50,46 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 			cloudinary_url: cloudinary_url,
 			ascii_url: '#'
 		}).then(function(project) {
-			
+			console.log(project.id) //!!!!!!!!this is getting project.id coreectly
+			request({
+				url: 'https://process.filestackapi.com/'
+				+ process.env.FIRE_STACK_KEY 
+				+ '/ascii=background:black,colored:true,size:40/' 
+				+ cloudinary_url
+			}, function(error, response, body) {
+				// console.log(error, body);
+			 	if (!error && response.statusCode === 200) {
+			 		var dataObj = body;
+			 	
+				 	db.project.update({
+				 		ascii_url: dataObj
+					 	}, {
+					    where: {
+					     id: project.id ///???how to identify the id posted
+					 	}
+					}).then(function(data) {
+					  	console.log('i am here! line 71');
+					  	var imgUrl = cloudinary_url;
+					  	console.log('data is :' + data);
+							res.redirect('/projects');
+				 	}); // close update.then
+			 	} // close if status code
+		  	});  //close request
+
 			//noew delete all the files in upload folder b/c they are uploaded already
 			fs.readdir('./uploads', function(err, items) {
 				items.forEach(function(file) {
 					fs.unlink('./uploads/' + file); //linux --- unlink == delete
 				});
 			});
-			res.redirect('/projects/' + project.id);
-		});
-	});
+			// res.redirect('/projects/' + project.id);
+		})
+	})
 });
 
 //sending image to FireStack to get ASCII image back
 router.get('/:id', function(req, res) {
-	var imgUrl = cloudinary_url;
-	request({
-		url: 'https://process.filestackapi.com/'
-		+ process.env.FIRE_STACK_KEY 
-		+ '/ascii=background:black,colored:true,size:40/' 
-		+ imgUrl
-	}, function(error, response, body) {
-		// console.log(error, body);
-		 if (!error && response.statusCode === 200) {
-		 	var dataObj = body;
-		 	// console.log(body);
 
-		 	db.project.update({
-		 		ascii_url: dataObj
-			 	}, {
-			    where: {
-			     id: req.params.id 
-			 	}
-			  }).then(function(project) {
-			  	console.log('project.ascii_url: ' + project.ascii_url);
-		 		res.render('projects/show', {project: project, imgUrl: imgUrl}) //.Search b/c dataObj structure data in search property
-		 	})
-		 }
-	  })
 });
 
 
