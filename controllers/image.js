@@ -36,33 +36,38 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 			description: req.body.description,
 			cloudinary_url: cloudinary_url,
 			ascii_url: '#'
-		}).then(function(record) {
+		}).then(function(project) {
 			//noew delete all the files in upload folder b/c they are uploaded already
 			fs.readdir('./uploads', function(err, items) {
 				items.forEach(function(file) {
 					fs.unlink('./uploads/' + file); //linux --- unlink == delete
 				});
 			});
-			res.redirect('/image/new');
+			res.redirect('/image/' + project.id);
 		});
-	})
+	});
 });
 
 //sending image to FireStack to get ASCII image back
-router.get('/', function(req, res) {
+router.get('/:id', function(req, res) {
 	var imgUrl = cloudinary_url;
-	request({
-		url: 'https://process.filestackapi.com/'
-		+ process.env.FIRE_STACK_KEY 
-		+ '/ascii=background:black,colored:true,size:40/' 
-		+ imgUrl
-	}, function(error, response, body) {
-		console.log(error, body);
-		 if (!error && response.statusCode === 200) {
-		 	var dataObj = body;
-		 	console.log(body);
-		 	res.render('image/imageResult', {imageResult: dataObj}) //.Search b/c dataObj structure data in search property
-		 }
+	db.project.find({
+	    where: { id: req.params.id },
+	    include: [db.user]
+	  }).then(function(){
+			request({
+				url: 'https://process.filestackapi.com/'
+				+ process.env.FIRE_STACK_KEY 
+				+ '/ascii=background:black,colored:true,size:40/' 
+				+ imgUrl
+			}, function(error, response, body) {
+				console.log(error, body);
+				 if (!error && response.statusCode === 200) {
+				 	var dataObj = body;
+				 	console.log(body);
+				 	res.render('image/imageResult', {imageResult: dataObj}) //.Search b/c dataObj structure data in search property
+				 }
+			  })
 	})
 });
 
