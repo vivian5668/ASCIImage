@@ -15,21 +15,7 @@ var cloudinary = require('cloudinary');
 
 var img = [];
 
-//sending image to FireStack to get ASCII image back
-router.get('/', function(req, res) {
-	var imgUrl = 'https://farm8.static.flickr.com/7367/13891786227_b876e184cd_b.jpg'
-	request({
-		url: 'https://process.filestackapi.com/' + 
-		process.env.FIRE_STACK_KEY + '/ascii=background:black,colored:true,size:40/' + imgUrl
-	}, function(error, response, body) {
-		console.log(error, body);
-		 if (!error && response.statusCode === 200) {
-		 	var dataObj = body;
-		 	console.log(body);
-		 	res.render('image/imageResult', {imageResult: dataObj}) //.Search b/c dataObj structure data in search property
-		 }
-	})
-});
+var cloudinary_url;
 
 //upload imaage to cloudinary
 router.get('/new', function(req, res) {
@@ -41,22 +27,43 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 	cloudinary.uploader.upload(req.file.path, function(result) {
 		// res.send(result);
 		img.push(result.public_id);
-		//noew delete all the files in upload folder b/c they are uploaded already
-		fs.readdir('./uploads', function(err, items) {
-			items.forEach(function(file) {
-				fs.unlink('./uploads/' + file); //linux --- unlink == delete
-			});
-		});
-		res.redirect('/image/new');
-	}).then(function(data) {
+
+		cloudinary_url = result.url;
+
 		db.project.create({
 			user_id: req.user.id, //to get the userId who signed in currently
 			project_name: req.body.project_name,
 			description: req.body.description,
-			cloudinary_url: data.url,
+			cloudinary_url: cloudinary_url,
 			ascii_url: '#'
-		})
+		}).then(function(record) {
+			//noew delete all the files in upload folder b/c they are uploaded already
+			fs.readdir('./uploads', function(err, items) {
+				items.forEach(function(file) {
+					fs.unlink('./uploads/' + file); //linux --- unlink == delete
+				});
+			});
+			res.redirect('/image/new');
+		});
 	})
-})
+});
+
+//sending image to FireStack to get ASCII image back
+router.get('/', function(req, res) {
+	var imgUrl = cloudinary_url;
+	request({
+		url: 'https://process.filestackapi.com/'
+		+ process.env.FIRE_STACK_KEY 
+		+ '/ascii=background:black,colored:true,size:40/' 
+		+ imgUrl
+	}, function(error, response, body) {
+		console.log(error, body);
+		 if (!error && response.statusCode === 200) {
+		 	var dataObj = body;
+		 	console.log(body);
+		 	res.render('image/imageResult', {imageResult: dataObj}) //.Search b/c dataObj structure data in search property
+		 }
+	})
+});
 
 module.exports = router;
