@@ -55,6 +55,10 @@ app.get('/gallery', function(req, res) {
   res.render('gallery');
 });
 
+app.get('/instructions', function(req, res) {
+  res.render('instructions');
+});
+
 app.get('/profile', isLoggedIn, function(req, res) {
   res.redirect('/projects');
 });
