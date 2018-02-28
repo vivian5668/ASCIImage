@@ -9,6 +9,12 @@ body {
 /*	height: 50vh;*/
 }
 
+#newproject {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
 .slider {
 	width: 600px;
 	margin: 0 auto;

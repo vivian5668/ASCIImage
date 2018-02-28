@@ -24,16 +24,23 @@ router.get('/', function(req, res) {
 				userId: req.user.id //id of current logged-in user
 			}
 		}).then(function(projects) {
-			res.render('projects/index', {projects : projects})
+			if (!req.user) {
+				res.render('projects/index', {currentUser: 'Login', projects: projects});
+			} else {
+			  	res.render('projects/index', {currentUser: req.user.dataValues.name, projects: projects});
+			    }
 		});
 });
-
-
 
 //get the form for new project
 router.get('/new', function(req, res) {
 	img = [];
-	res.render('projects/new', {img, cloudinary});
+	// res.render('projects/new', {img, cloudinary});
+	if (!req.user) {
+		res.render('projects/new', {currentUser: 'Login'});
+	} else {
+	  	res.render('projects/new', {currentUser: req.user.dataValues.name});
+	    }
 });
 
 //upload imaage to cloudinary
@@ -91,7 +98,11 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 //sending image to FireStack to get ASCII image back
 router.get('/:id', function(req, res) {
 	db.project.findById(req.params.id).then(function(project) {
-		res.render('projects/show', {project : project});
+		if (!req.user) {
+			res.render('projects/show', {currentUser: 'Login', project: project});
+		} else {
+		  	res.render('projects/show', {currentUser: req.user.dataValues.name, project: project});
+		    }
 	});
 });
 
@@ -100,8 +111,11 @@ router.get('/:id', function(req, res) {
 //Get edit form
 router.get('/:id/edit', function(req, res) {
 	db.project.findById(req.params.id).then(function(project) {
-		// console.log(project);
-		res.render('projects/edit', {project : project});
+		if (!req.user) {
+			res.render('projects/edit', {currentUser: 'Login', project: project});
+		} else {
+		  	res.render('projects/edit', {currentUser: req.user.dataValues.name, project: project});
+		    }
 	});
 })
 

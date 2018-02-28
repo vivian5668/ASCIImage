@@ -4,7 +4,11 @@ var passport = require('../config/ppConfig');
 var router = express.Router();
 
 router.get('/signup', function(req, res) {
-  res.render('auth/signup');
+	if (!req.user) {
+		res.render('auth/signup', {currentUser: 'Login'});
+	} else {
+  		res.render('auth/signup', {currentUser: req.user.dataValues.name});
+    }
 });
 
 router.post('/signup', function(req, res) {
@@ -36,7 +40,11 @@ router.post('/signup', function(req, res) {
 })
 
 router.get('/login', function(req, res) {
-  res.render('auth/login');
+	if (!req.user) {
+		res.render('auth/login', {currentUser: 'Login'});
+	} else {
+  		res.render('auth/login', {currentUser: req.user.dataValues.name});
+    }
 });
 
 router.post('/login', passport.authenticate('local', {

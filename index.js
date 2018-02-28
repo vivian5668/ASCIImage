@@ -48,24 +48,36 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.render('index');
+	if (!req.user) {
+		res.render('index', {currentUser: 'Login'});
+	} else {
+  		res.render('index', {currentUser: req.user.dataValues.name});
+    }
 });
 
 app.get('/gallery', function(req, res) {
-  res.render('gallery');
+  if (!req.user) {
+		res.render('gallery', {currentUser: 'Login'});
+	} else {
+  		res.render('gallery', {currentUser: req.user.dataValues.name});
+    }
 });
 
 app.get('/instructions', function(req, res) {
-  res.render('instructions');
+  if (!req.user) {
+		res.render('instructions', {currentUser: 'Login'});
+	} else {
+  		res.render('instructions', {currentUser: req.user.dataValues.name});
+    }
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.redirect('/projects');
 });
 
-app.get('/projects/new', isLoggedIn, function(req, res) {
-  res.redirect('/projects');
-});
+// app.get('/projects/new', isLoggedIn, function(req, res) {
+//   res.redirect('/projects');
+// });
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/projects', require('./controllers/projects'));

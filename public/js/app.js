@@ -1,7 +1,8 @@
 
 
 $(document).ready(function(){
-		$('.delete-link').on('click', function(e) {
+	//delete projects ajax
+	$('.delete-link').on('click', function(e) {
 		console.log('in delete route');
 		e.preventDefault();
 		var deleteUrl = $(this).attr('href');
@@ -14,7 +15,7 @@ $(document).ready(function(){
 	})
 
 	
-
+	//update project information ajax
 	$('#put-form').on('submit', function (e) {
 			console.log('form was submitted');
 			e.preventDefault();
@@ -32,8 +33,8 @@ $(document).ready(function(){
 			})
 		})
 
+	//materilize jQuery functions initiation
 	$('.tooltipped').tooltip({delay: 50});
-
 	$(".button-collapse").sideNav();
 	$('.slider').slider({
 	 	// height: 300,
