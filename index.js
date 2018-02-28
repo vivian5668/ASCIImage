@@ -8,6 +8,7 @@ var session = require('express-session');
 var passport = require('./config/ppConfig');
 var path = require('path');
 var fs = require('fs');
+var db = require('./models')
 
 var isLoggedIn = require('./middleware/isLoggedIn');
 
@@ -55,7 +56,13 @@ app.get('/gallery', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
+  db.project.findAll({
+			where: {
+				userId: req.user.id //id of current logged-in user
+			}
+		}).then(function(projects) {
+			res.render('projects/index', {projects : projects})
+		});
 });
 
 app.use('/auth', require('./controllers/auth'));

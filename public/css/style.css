@@ -64,7 +64,15 @@ body {
 	}
 }
 
-#cloudinarypicture {
-	
+.cloudinarypicture {
+	width: 400px;
+	height: 400px;
+	background-repeat: no-repeat;
+    background-size: auto;
+    margin: 0 auto;
+}
+
+#projectsbox {
+	text-align: center;
 }
 

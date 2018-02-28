@@ -89,7 +89,9 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 
 //sending image to FireStack to get ASCII image back
 router.get('/:id', function(req, res) {
-
+	db.project.findById(req.params.id).then(function(project) {
+		res.render('projects/show', {project : project});
+	});
 });
 
 
@@ -98,7 +100,7 @@ router.get('/:id', function(req, res) {
 router.get('/:id/edit', function(req, res) {
 	db.project.findById(req.params.id).then(function(project) {
 		// console.log(project);
-		res.render('projects/edit', {project : project.dataValues});
+		res.render('projects/edit', {project : project});
 	});
 })
 
@@ -118,13 +120,12 @@ router.put('/:id', function(req, res) {
 
 //delete a project
 router.delete('/:id/destroy', function(req, res) {
-	db.project.findOne({
-		where: {id: req.params.id},
-		include: [db.post]
-	}).then(function(project) {
-			project.removePost(p); //removes the relationships in the join table
-			
-		})
+	console.log('in delete route');
+	db.project.destroy({
+		where: {id: req.params.id}
+	}).then(function(data) {
+		res.send('success');
+	})
 }) //end of router.delete
 
 module.exports = router;

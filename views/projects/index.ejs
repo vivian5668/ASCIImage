@@ -1,13 +1,15 @@
-<h2>Projects Index - show all</h2>
+<div id="projectsbox">
+	<h2>Projects Index - show all</h2>
 
-<ul>
-	<% projects.forEach(function(project) { %>
-		<li><h2><%= project.project_name  %></h2>  - <a class="delete-link" href="/articles/<%= project.id %>/destroy">Delete</a></li>
+	<ul>
+		<% projects.forEach(function(project) { %>
+			<li><a href="/projects/<%= project.id %>"><h2><%= project.project_name  %></h2></a>  - <a class="delete-link" href="/projects/<%= project.id %>/destroy">Delete</a></li>
 
-		<div> <img src="<%= project.cloudinary_url %>" alt=""></div>
+			<div class="cloudinarypicture" style='background:url("<%= project.cloudinary_url %>");background-repeat: no-repeat;background-size: contain'></div>
 
-		<div id="imageResult">
-			<%- project.ascii_url %>
-		</div>
-   <% }); %>
-</ul>
+			<div id="imageResult">
+				<%- project.ascii_url %>
+			</div>
+	   <% }); %>
+	</ul>
+</div>
