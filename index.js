@@ -56,13 +56,7 @@ app.get('/gallery', function(req, res) {
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {
-  db.project.findAll({
-			where: {
-				userId: req.user.id //id of current logged-in user
-			}
-		}).then(function(projects) {
-			res.render('projects/index', {projects : projects})
-		});
+  res.redirect('/projects');
 });
 
 app.use('/auth', require('./controllers/auth'));

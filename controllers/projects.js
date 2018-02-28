@@ -32,6 +32,7 @@ router.get('/', function(req, res) {
 
 //get the form for new project
 router.get('/new', function(req, res) {
+	img = [];
 	res.render('projects/new', {img, cloudinary});
 });
 
@@ -107,7 +108,8 @@ router.get('/:id/edit', function(req, res) {
 //edit project details
 router.put('/:id', function(req, res) {
 	db.project.update({
-		name: req.body.name
+		project_name: req.body.name,
+		description: req.body.description
 	}, {
 		where: {id: req.params.id}
 	}).then(function(project) {

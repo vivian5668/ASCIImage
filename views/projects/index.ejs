@@ -3,7 +3,15 @@
 
 	<ul>
 		<% projects.forEach(function(project) { %>
-			<li><a href="/projects/<%= project.id %>"><h2><%= project.project_name  %></h2></a>  - <a class="delete-link" href="/projects/<%= project.id %>/destroy">Delete</a></li>
+			<li>
+				<a href="/projects/<%= project.id %>">
+					<h2><%= project.project_name  %></h2>
+				</a>
+				  - 
+				<a class="delete-link" href="/projects/<%= project.id %>/destroy">
+					Delete
+				</a>
+			</li>
 
 			<div class="cloudinarypicture" style='background:url("<%= project.cloudinary_url %>");background-repeat: no-repeat;background-size: contain'></div>
 
@@ -13,3 +21,4 @@
 	   <% }); %>
 	</ul>
 </div>
+
