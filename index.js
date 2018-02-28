@@ -59,6 +59,10 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.redirect('/projects');
 });
 
+app.get('/projects/new', isLoggedIn, function(req, res) {
+  res.redirect('/projects');
+});
+
 app.use('/auth', require('./controllers/auth'));
 app.use('/projects', require('./controllers/projects'));
 
