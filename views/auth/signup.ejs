@@ -1,18 +1,34 @@
-<form action="/auth/signup" method="POST">
-  <div class="form-group">
-    <label for="authEmail">Email</label>
-    <input id="authEmail" class="form-control" type="email" name="email">
-  </div>
 
-  <div class="form-group">
-    <label for="authName">Name</label>
-    <input id="authName" class="form-control" type="text" name="name">
-  </div>
 
-  <div class="form-group">
-    <label for="authPassword">Password</label>
-    <input id="authPassword" class="form-control" type="password" name="password">
-  </div>
+<div id="signupForm">
+  <h3>Sign Up</h3>
+  <form action="/auth/signup" method="POST">
+    <div class="row">
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input id="authEmail" type="email" name="email" required>
+                <label for="authEmail">Email</label>
+              </div>
+    </div>
 
-  <input class="btn btn-primary" type="submit">
-</form>
+
+    <div class="row">
+              <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input id="authName" type="text" name="name" required>
+                <label for="authName">Name</label>
+              </div>
+         </div>
+
+    <div class="row">
+              <div class="input-field">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="authPassword" type="password" name="password" required>
+                <label for="authPassword">Password</label>
+              </div>
+         </div>
+
+
+    <input class="btn btn-primary waves-effect waves-light #e0e0e0 grey lighten-2 black-text hoverable" type="submit">
+  </form>
+</div>

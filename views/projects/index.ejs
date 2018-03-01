@@ -1,24 +1,32 @@
 <div id="projectsbox">
-	<h2>Projects Index - show all</h2>
-	<a href="/projects/new" class="waves-effect waves-light btn">Create a new project</a>
-	<ul>
+	<h4>All Projects</h4>
+	<a href="/projects/new" class="waves-effect waves-light btn #e0e0e0 grey lighten-2 black-text">New Project</a>
+	
+	<div id="wrapper">
+        <div id="columns-index">
+
 		<% projects.forEach(function(project) { %>
-			<li>
-				<a href="/projects/<%= project.id %>">
-					<h2><%= project.project_name  %></h2>
-				</a>
-				  - 
-				<a class="delete-link" href="/projects/<%= project.id %>/destroy">
-					Delete
-				</a>
-			</li>
-
-			<div class="cloudinarypicture" style='background:url("<%= project.cloudinary_url %>");background-repeat: no-repeat;background-size: contain'></div>
-
-			<div id="imageResult">
-				<%- project.ascii_url %>
-			</div>
+			<div class="col s6 projectCards">
+				<div class="card grid black">
+		            <div class="card-image">
+		              <img src="<%= project.cloudinary_url %>">
+		              <span class="card-title"><a href="/projects/<%= project.id%>"><%= project.project_name%></a></span>
+		            </div>
+		            <div class="card-content">
+		              <p><%= project.description%></p>
+		            </div>
+		            <div class="card-action">
+		              <a class="delete-link" href="/projects/<%= project.id %>/destroy">
+						Delete
+					</a>
+		            </div>
+		         </div>
+		    </div>
 	   <% }); %>
-	</ul>
+	 </div>
+  </div>
+	
 </div>
+
+
 

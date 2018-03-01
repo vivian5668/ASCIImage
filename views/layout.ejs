@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Josefin+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 
@@ -31,6 +32,7 @@
                           <%= currentUser %>&nbsp;&nbsp;<i class="fas fa-user-circle fa-lg"></i>
                     </a>
                 </li>
+                <li><a href="/projects/new" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="New fun awaits!">New Project&nbsp;&nbsp;<i class="fas fa-plus fa-lg"></i></a></li>
                 <li><a href="/auth/logout" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Logout"><i class="fas fa-sign-out-alt fa-lg"></i></a></li>
                 <li><a href="/instructions" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="How to Use"><i class="fas fa-question fa-lg"></i></a></li>
                 <li><a href="/gallery" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Gellary"><i class="fas fa-th fa-lg"></i></a></li>
@@ -53,6 +55,7 @@
                           <%= currentUser %>&nbsp;&nbsp;<i class="fas fa-user-circle fa-lg"></i>
                     </a>
                 </li>
+                <li><a href="/projects/new" ><i class="fas fa-plus fa-lg"></i>&nbsp;&nbsp;&nbsp;New Project</a>
                 <li><a href="/auth/logout" ><i class="fas fa-sign-out-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;Logout</a></li>
                 <li><a href="/instructions"><i class="fas fa-question fa-lg"></i>&nbsp;&nbsp;&nbsp;How to Start</a></li>
                 <li><a href="/gallery"><i class="fas fa-th fa-lg"></i>&nbsp;&nbsp;&nbsp;Gallery</a></li>
@@ -78,7 +81,6 @@
    </div>
 
     <div>
-      <%- JSON.stringify(currentUser)%>
       <% include partials/alerts %>
       <%- body %>
     </div>

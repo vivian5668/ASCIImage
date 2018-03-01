@@ -1,9 +1,27 @@
-<h2><%= project.project_name%></h2>
+<div id="projectShow">
+	<div class="row valign-wrapper">
+		<div class="col s6" id="project_show_leftbox">
+			<h4><%= project.project_name%></h4>
 
-<a class="waves-effect waves-light btn" href="/projects/<%= project.id%>/edit">Edit project details</a>
+			<a id="editButton" class="waves-effect waves-light btn #e0e0e0 grey lighten-2 black-text" href="/projects/<%= project.id%>/edit">Edit project details</a>
+		</div>
+			<div class="col s6" id="project_show_rightbox">
+				<div class="card grid black">
+		            <div class="card-image">
+		              <img src="<%= project.cloudinary_url %>">
+		              
+		            </div>
+		            <div class="card-content">
+		              <p><%= project.description%></p>
+		            </div>
+		         </div>
+		    </div>
+	</div>
 
-<div class="cloudinarypicture" style='background:url("<%= project.cloudinary_url %>");background-repeat: no-repeat;'></div>
-
-<div id="imageResult">
-	<%- project.ascii_url %>
+		<div id="imageResult">
+			<%- project.ascii_url %>
+	</div>
 </div>
+
+
+

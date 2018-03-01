@@ -27,7 +27,7 @@ $(document).ready(function(){
 				url: editUrl,
 				data: editData
 			}).done(function(data) {
-				console.log(data);
+				window.location = editForm.attr('action');
 				//update the client side UI
 
 			})

@@ -1,17 +1,39 @@
 <div id="newproject">
-	<h1>File Upload</h1>
+	<h4>Upload your Picture</h4>
 
 	<form enctype="multipart/form-data" action="/projects/new" method="POST">
-	  <input type="text" name="project_name" placeholder="project name here...">
-	  <input type="text" name="description" placeholder="description here...">
-	  <input type="file" name="myFile">
-	  <input type="submit" class="btn btn-primary">
+	  <div class="row">
+		    <form class="col s12">
+		      <div class="row">
+		        <div class="input-field">
+		          <i class="material-icons prefix">recent_actors</i>
+		          <input id="icon_prefix" type="text" name="project_name" required>
+		          <label for="icon_prefix">Project Name</label>
+		        </div>
+		      </div>
+
+		      <div class="row">
+		        <div class="input-field">
+		          <i class="material-icons prefix">playlist_add</i>
+		          <textarea id="icon_des" name="description" class="materialize-textarea" required></textarea>
+		          <label for="icon_des">Description</label>
+		        </div>
+		      </div>
+		  </div>
+	  
+	  <div class="file-field input-field">
+	      <div class="#424242 grey darken-3 btn">
+	        <span>File</span>
+	        <input type="file" name="myFile">
+	      </div>
+	      <div class="file-path-wrapper">
+	        <input class="file-path validate type="text" required>
+	      </div>
+      </div>
+
+
+	  <input type="submit" class="btn btn-primary waves-effect waves-light #e0e0e0 grey lighten-2 black-text hoverable">
 	</form>
 </div>
 
-	<h1>My Images</h1>
 
-<% img.forEach(function(image) { %>
-	<% var imgUrl = cloudinary.url(image, {width: 150, height: 150}); %>
-	<img src="<%= imgUrl %>" >
-<%}); %>

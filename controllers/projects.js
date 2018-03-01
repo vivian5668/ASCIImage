@@ -73,13 +73,13 @@ router.post('/new', upload.single("myFile"), function(req, res) {
 				 		ascii_url: dataObj
 					 	}, {
 					    where: {
-					     id: project.id ///???how to identify the id posted
+					     id: project.id ///!!!to identify the id posted
 					 	}
 					}).then(function(data) {
 					  	console.log('i am here! line 71');
 					  	var imgUrl = cloudinary_url;
 					  	console.log('data is :' + data);
-							res.redirect('/projects');
+							res.redirect('/projects/' + project.id);
 				 	}); // close update.then
 			 	} // close if status code
 		  	});  //close request

@@ -1,20 +1,27 @@
 
-	
-<div>
-	<div id="loginForm">
-		<form class="center-align" action="/auth/login" method="POST">
-		  <div>
-		    <label for="authEmail">Email</label>
-		    <input id="authEmail" class="form-control" type="email" name="email">
-		  </div>
 
-		  <div>
-		    <label for="authPassword">Password</label>
-		    <input id="authPassword" class="form-control" type="password" name="password">
-		  </div>
+<div id="loginForm" class="row">
+	<h3>Login</h3>
+	<form class="center-align col s12" action="/auth/login" method="POST">
+	  
+	  <div class="row">
+	        <div class="input-field">
+	          <i class="material-icons prefix">person</i>
+	          <input id="authEmail" type="email" name="email" required>
+	          <label for="authEmail">Email</label>
+	        </div>
+	   </div>
 
-		  <input class="btn" type="submit">
-		</form>
-	</div>
+	   <div class="row">
+	        <div class="input-field">
+	          <i class="material-icons prefix">vpn_key</i>
+	          <input id="authPassword" type="password" name="password" required>
+	          <label for="authPassword">Password</label>
+	        </div>
+	   </div>
+
+	  <input class="btn btn-primary waves-effect waves-light #e0e0e0 grey lighten-2 black-text hoverable" type="submit">
+	</form>
 </div>
+
 
