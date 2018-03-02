@@ -76,7 +76,8 @@ form {
 }
 
 .slider {
-	width: 600px;
+	width: 50vw;
+	height: auto;
 	margin: 0 auto;
 }
 
@@ -124,6 +125,14 @@ form {
 	}
 	#columns-index {
 	column-count: 1;
+	}
+}
+
+@media (max-width: 600px) {
+	.slider {
+	width: 87vw;
+	height: auto;
+	margin: 0 auto;
 	}
 }
 
