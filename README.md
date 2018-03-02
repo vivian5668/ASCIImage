@@ -2,6 +2,7 @@
 ###  - Convert Your Image to ASCII
 <img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36050996-7426a09e-0d9d-11e8-9abe-03ab1704f7ee.png">
 
+
 ## Introduction
 Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a picture, and you will get back the ASCII image in text format. Try it [here](https://github.com/vivian5668/Tinkling).
 
@@ -16,12 +17,16 @@ Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a pic
 >For the best user experience, the web version uses a consistent centered layout with a navigation bar on the top. The navigation bar is dynamic based on if there is a user currently logged in.
 
 
-<img src="https://user-images.githubusercontent.com/35155255/36052259-c2073b26-0da1-11e8-88b4-7a3a8b041507.png" width="350" height="250">
+<img src="https://user-images.githubusercontent.com/35155255/36921109-f713b6ce-1e17-11e8-8029-21f8b723e82b.png" height="250">
+
+<img src="https://user-images.githubusercontent.com/35155255/36921115-f9f4ce46-1e17-11e8-89c7-e69091d1b35e.png" height="250">
+
+<img src="https://user-images.githubusercontent.com/35155255/36921102-ef25012a-1e17-11e8-8477-8d3499aca05b.png"" height="250">
 
 
 ### Mobile Version
 >The mobile version resembles the web version mostly with minor modification to fit contents on smaller screens. The navigation bar collapses and slides out from the left of the screen once you click on the hamburger icon. The gallery page also changes column layout on mobile version.
-<img src="https://user-images.githubusercontent.com/35155255/36052262-c7942810-0da1-11e8-922f-7ca25851a917.png" width="150" height="290">
+<img src="https://user-images.githubusercontent.com/35155255/36921116-fc7ad3a4-1e17-11e8-9dd4-9887c9ae6f8b.png" width="150" height="290">
 
 ## Technology / Library Used
 
