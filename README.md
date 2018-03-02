@@ -1,6 +1,6 @@
 # ASCIImage
 ###  - Convert Your Image to ASCII
-<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36921325-cdfbb1aa-1e18-11e8-8ffe-2c64ea469747.png">
+<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36921325-cdfbb1aa-1e18-11e8-8ffe-2c64ea469747.png" width="400">
 
 
 ## Introduction
@@ -19,9 +19,9 @@ Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a pic
 
 <img src="https://user-images.githubusercontent.com/35155255/36921109-f713b6ce-1e17-11e8-8029-21f8b723e82b.png" height="250">
 
-<img src="https://user-images.githubusercontent.com/35155255/36921115-f9f4ce46-1e17-11e8-89c7-e69091d1b35e.png" >
+<img src="https://user-images.githubusercontent.com/35155255/36921115-f9f4ce46-1e17-11e8-89c7-e69091d1b35e.png" width="300">
 
-<img src="https://user-images.githubusercontent.com/35155255/36921102-ef25012a-1e17-11e8-8477-8d3499aca05b.png" >
+<img src="https://user-images.githubusercontent.com/35155255/36921102-ef25012a-1e17-11e8-8477-8d3499aca05b.png" width="300">
 
 
 ### Mobile Version
