@@ -82,6 +82,6 @@ app.get('/profile', isLoggedIn, function(req, res) {
 app.use('/auth', require('./controllers/auth'));
 app.use('/projects', require('./controllers/projects'));
 
-var server = app.listen(process.env.PORT || 3000);
+var server = app.listen(process.env.PORT || 3000); //this will connect to Heruku envir. port, if not, if will default to 3000
 
 module.exports = server;

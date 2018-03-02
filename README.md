@@ -1,6 +1,6 @@
 # ASCIImage
 ###  - Convert Your Image to ASCII
-<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36921325-cdfbb1aa-1e18-11e8-8ffe-2c64ea469747.png" width="500">
+<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36921325-cdfbb1aa-1e18-11e8-8ffe-2c64ea469747.png">
 
 
 ## Introduction
