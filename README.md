@@ -1,6 +1,6 @@
 # ASCIImage
 ###  - Convert Your Image to ASCII
-<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36050996-7426a09e-0d9d-11e8-9abe-03ab1704f7ee.png">
+<img width="481" alt="readme_pic" src="https://user-images.githubusercontent.com/35155255/36921325-cdfbb1aa-1e18-11e8-8ffe-2c64ea469747.png">
 
 
 ## Introduction
@@ -19,14 +19,14 @@ Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a pic
 
 <img src="https://user-images.githubusercontent.com/35155255/36921109-f713b6ce-1e17-11e8-8029-21f8b723e82b.png" height="250">
 
-<img src="https://user-images.githubusercontent.com/35155255/36921115-f9f4ce46-1e17-11e8-89c7-e69091d1b35e.png" height="250">
+<img src="https://user-images.githubusercontent.com/35155255/36921115-f9f4ce46-1e17-11e8-89c7-e69091d1b35e.png" >
 
-<img src="https://user-images.githubusercontent.com/35155255/36921102-ef25012a-1e17-11e8-8477-8d3499aca05b.png"" height="250">
+<img src="https://user-images.githubusercontent.com/35155255/36921102-ef25012a-1e17-11e8-8477-8d3499aca05b.png" >
 
 
 ### Mobile Version
 >The mobile version resembles the web version mostly with minor modification to fit contents on smaller screens. The navigation bar collapses and slides out from the left of the screen once you click on the hamburger icon. The gallery page also changes column layout on mobile version.
-<img src="https://user-images.githubusercontent.com/35155255/36921116-fc7ad3a4-1e17-11e8-9dd4-9887c9ae6f8b.png" width="150" height="290">
+<img src="https://user-images.githubusercontent.com/35155255/36921116-fc7ad3a4-1e17-11e8-9dd4-9887c9ae6f8b.png">
 
 ## Technology / Library Used
 
