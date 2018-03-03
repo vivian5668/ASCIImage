@@ -51,6 +51,7 @@ Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a pic
 - Google GIF / image search
 
 - Materialize CSS documentation
+- [Firestack API](https://blog.filestack.com/api/an-api-to-convert-any-image-into-ascii/)
 
 
 
