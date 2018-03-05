@@ -4,7 +4,7 @@
 
 
 ## Introduction
-Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a picture, and you will get back the ASCII image in text format. Try it [here](https://github.com/vivian5668/Tinkling).
+Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a picture, and you will get back the ASCII image in text format. Try it [here](https://asciiamge.herokuapp.com/).
 
 ## Supported Browsers
 
