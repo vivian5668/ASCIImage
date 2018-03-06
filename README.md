@@ -51,13 +51,13 @@ Looking for a modern way to re-create images? Try ASCIIamge! Simply upload a pic
 
 
 ## Models & Sample Data
-| Name          | Email          | Password |
-| ------------- |---------------| -------|
-| Happy    		| happy@gmail.com			| $2a$10$Cnu/3QHw2WCaMo4xTfq5K.MTL9W2N4PDlA9t/0UOrj6I3A8c9GD7a  |	
+|id| name          | email          | password |
+|--|------------- |---------------| -------|
+| 2| Happy    		| happy@gmail.com			| $2a$10$Cnu/3QHw2WCaMo4xTfq5K.MTL9W2N4PDlA9t/0UOrj6I3A8c9GD7a  |	
 
-| project_name  | description   | cloudinary_url | ascii_url     | userId        |
-| ------------- |---------------| ---------------| ------------- |---------------|
-| Sydney Colors | School Project| http://res.cloudinary.com/dxc.. |<span>djiendjncjd... | 2 |
+|id| project_name  | description   | cloudinary_url | ascii_url     | userId        |
+| -|----------- |---------------| ---------------| ------------- |---------------|
+| 1| Sydney Colors | School Project| http://res.cloudinary.com/dxc.. |<span>djiendjncjd... | 2 |
 
 ## Technology / Library Used
 
